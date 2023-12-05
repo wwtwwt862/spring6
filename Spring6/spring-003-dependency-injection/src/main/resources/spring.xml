@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="UserDao" class="org.sunmk.dao.UserDao" >
+
+</bean>
+<bean id="UserService" class="org.sunmk.service.UserService">
+<!--    想让spring调用set方法，需要配置property标签-->
+<!--    name 写的是set方法去掉set后首字母小写-->
+<!--    ref翻译为引用，/                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       -->
+    <property name="userDao" ref="UserDao"></property>
+ </bean>
+</beans>
