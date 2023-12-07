@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean class="org.sunmk.dao.UserDao" id="UserDaoBean"></bean>
+<bean class="org.sunmk.dao.VipDao" id="VipDaoBean"></bean>
+<bean class="org.sunmk.service.CustomerService" id="CustomerServiceBeans">
+<!--    构造注入-->
+<!--    指定构造方法的第一个参数，下标是0
+        ref用来指定bean的id
+-->
+    <constructor-arg index="0" ref="UserDaoBean"/>
+    <!--    指定构造方法的第二个参数，下标是0-->
+    <constructor-arg index="1" ref="VipDaoBean"/>
+</bean>
+</beans>
