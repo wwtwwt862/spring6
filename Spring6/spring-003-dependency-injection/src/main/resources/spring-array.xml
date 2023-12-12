@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="w1" class="org.sunmk.bean.Woman">
+        <property name="name" value="小花" />
+    </bean>
+
+    <bean id="w2" class="org.sunmk.bean.Woman">
+        <property name="name" value="小亮" />
+    </bean>
+
+    <bean id="w3" class="org.sunmk.bean.Woman">
+        <property name="name" value="小憨" />
+    </bean>
+
+    <bean id="YuQianBean" class="org.sunmk.bean.YuQian">
+        <property name="hobbies">
+            <!--这个数组中的元素是简单的数据类型String，需要在property下面添加array数组+-->
+            <array>
+                <value>抽烟</value>
+                <value>喝酒</value>
+                <value>烫头</value>
+            </array>
+        </property>
+
+        <property name="woman">
+            <array>
+                <ref bean="w1"></ref>
+                <ref bean="w2"></ref>
+                <ref bean="w3"></ref>
+            </array>
+        </property>
+    </bean>
+
+
+</beans>
